@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
     <!-- Main -->
-    <div class="container">
+    <div class="container" v-loading="loading">
       <div class="row main">
         <div class="col-md-9 side-left topics-show" style="margin-bottom: 20px;">
           <!-- view show -->
@@ -15,13 +15,13 @@
               </div>
               <div class="clearfix"></div>
             </div>
-            <div class="content-body entry-content panel-body ">
+            <div class="content-body entry-content panel-body">
               <div class="markdown-body" v-html="article.html" v-highlight>
               </div>
             </div>
             <div class="tag">
               <el-tag class="el-tag" type="info" v-for="tag in article.tags">
-                <a href="">{{tag.name}}</a>
+                <a href="#">{{tag.name}}</a>
               </el-tag>
             </div>
               <!--<i class="icon tags"></i>-->
@@ -46,7 +46,8 @@
     },
     data() {
       return {
-        article: {}
+        article: {},
+        loading: true
       }
     },
     created() {
@@ -56,11 +57,14 @@
         .then(response => {
           this.article = response.data;
           console.log(this.article.tag);
+        })
+        .then(() => {
+          this.loading = false;
         });
     },
   }
 </script>
-<style scoped>
+<style lang="scss">
   @media only screen and (max-device-width: 480px) and (min-device-width: 120px) {
     .container {
       padding: 0 7px;

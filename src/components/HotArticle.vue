@@ -5,16 +5,9 @@
         </div>
         <div class="panel-body">
           <ul class="list" id="hots">
-            <li>1. <a href="/view/107">历届奥斯卡最佳</a></li>
-            <li>2. <a href="/view/49">JVM垃圾回收算法之-标记清除</a></li>
-            <li>3. <a href="/view/50">MaxTenuringThreshold 和 TargetSurvivorRatio参数说明</a></li>
-            <li>4. <a href="/view/25">刘瑜：年轻时我们都梦想拯救世界，后来……</a></li>
-            <li>5. <a href="/view/122">Stephen Wolfram--地球上活着的最聪明的人之一</a></li>
-            <li>6. <a href="/view/48">JVM垃圾回收算法-复制算法</a></li>
-            <li>7. <a href="/view/123">问世间情为何物</a></li>
-            <li>8. <a href="/view/109">强势推荐--侣行</a></li>
-            <li>9. <a href="/view/47">volatile</a></li>
-            <li>10. <a href="/view/115">史上最全的大数据分析和制作工具(持续更新)</a></li>
+            <li v-for="(article, index) in articles">
+              {{index + 1}}. <router-link :to="'/article/' + article.id">{{article.title}}</router-link>
+            </li>
           </ul>
         </div>
       </div>
@@ -22,7 +15,24 @@
 
 <script>
   export default {
-    name: 'HotArticle'
+    name: 'HotArticle',
+    data() {
+      return {
+        articles: {},
+      }
+    },
+    created() {
+      this.getHotArticle();
+    },
+    methods: {
+      getHotArticle: function () {
+        this.$axios.get('http://www.newblog.com/api/article/hot')
+          .then(response => {
+            this.articles = response.data;
+            console.log(this.articles);
+          })
+      }
+    }
   }
 </script>
 <style scoped>

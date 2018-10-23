@@ -16,28 +16,26 @@
 
       <div id="top-navbar-collapse" :class="['collapse', 'navbar-collapse', { in: showCollapsedNav }]">
         <ul class="nav navbar-nav">
+          <li>
           <li :class="{ active: 0 === activeNavIndex }">
-            <router-link :to="'/'" @click="changeNavIndex(0)">首页</router-link>
+            <router-link :to="'/'" @click.native="changeNavIndex(0)">首页</router-link>
           </li>
           <li v-for="(item, index) in navList" :class="{ active: index + 1 === activeNavIndex }">
-            <a href="#" @click="changeNavIndex(index + 1)">{{ item.category_name }}</a>
+            <router-link @click.native="changeNavIndex(index + 1)" :to="{path: '/category/article/' + item.id}">{{ item.category_name }}</router-link>
           </li>
         </ul>
-
         <!-- 入口组件 -->
         <div class="navbar-right">
-          <SearchInput/>
+          <SearchInput></SearchInput>
+          <!--<SearchInput v-on:listenToChildEvent="showMsgFromChild"></SearchInput>-->
           <TheEntry/>
         </div>
-
       </div>
     </div>
   </div>
 </template>
 
 <script>
-  import md5 from 'blueimp-md5'
-  import sign from '@/utils/sign'
   import LogoSrc from '@/assets/logo.png';
   import TheEntry from '@/components/layouts/TheEntry'
   import SearchInput from '@/components/layouts/SearchInput'
@@ -49,26 +47,27 @@
       SearchInput
     },
     data() {
-      return {
-        logo: {
-          src: LogoSrc,
-          title: '宋耀锋博客logo',
-        },
-        navList: [],
-        activeNavIndex: 0,
-        showCollapsedNav: false
-    }
+        return {
+          logo: {
+            src: LogoSrc,
+            title: '宋耀锋博客logo',
+          },
+          navList: [],
+          activeNavIndex: 0,
+          showCollapsedNav: false,
+      }
     },
     created() {
-      console.log(sign('123456pac'));
       this.getCategory();
     },
 
-    beforeCreate() {
-    },
     methods: {
+      showMsgFromChild(data) {
+        // console.log(data);
+      },
       changeNavIndex(index) {
         this.activeNavIndex = index;
+
       },
       toggleNav() {
         this.showCollapsedNav = !this.showCollapsedNav

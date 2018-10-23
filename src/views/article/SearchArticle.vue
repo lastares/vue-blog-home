@@ -32,29 +32,27 @@
 </template>
 <script>
   export default {
-    name: 'Index',
+    name: 'SearchArticle',
     data() {
       return {
         imgSrc: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=154816243,285037458&fm=26&gp=0.jpg',
         articles: {},
-        loading: true
+        loading: true,
       }
     },
     created() {
-      this.getIndexArticle();
-      // console.log(this.$router.currentRoute);
-      console.log(this.$route.params.word);
-      // this.isloading = false;
+      let value = this.$route.params.word;
+      this.getIndexArticle(value);
     },
     methods: {
-      getIndexArticle: function () {
-        this.$axios.get('http://www.newblog.com/api/articles')
+      getIndexArticle(value) {
+        this.$axios.get('http://www.newblog.com/api/articles', {params:{
+            word: value
+          }})
           .then(response => {
             this.articles = response.data;
           })
-          .then(() => {
-            this.loading = false;
-          });
+          .finally(() => this.loading = false);
       }
     }
   }

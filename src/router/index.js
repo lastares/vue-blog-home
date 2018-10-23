@@ -4,6 +4,8 @@ import Register from '@/views/auth/Register'
 import ArticleList from '@/views/index/Index'
 import Login from '@/views/auth/Login'
 import Detail from '@/views/article/Detail'
+import CategoryArticle from '@/views/category/Articles'
+import SearchArticle from '@/views/article/SearchArticle'
 
 Vue.use(Router);
 const routes = [
@@ -29,6 +31,17 @@ const routes = [
     path: '/article/:id',
     name: 'Detail',
     component: Detail
+  },
+  {
+    path: '/category/article/:category_id',
+    name: 'CategoryArticle',
+    component: CategoryArticle
+  },
+
+  {
+    path: '/article/search/:word',
+    name: 'SearchArticle',
+    component: SearchArticle
   },
 ];
 

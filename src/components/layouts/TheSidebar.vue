@@ -3,7 +3,7 @@
     <Profile/>
     <HotArticle/>
     <RandomArticle/>
-    <HotTag/>
+    <!--<HotTag/>-->
   </div>
 </template>
 

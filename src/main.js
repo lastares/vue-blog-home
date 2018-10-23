@@ -8,6 +8,8 @@ import store from './store'
 import axios from './axios'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import SearchInput from '@/components/layouts/SearchInput'
+
 
 // Vue-cli生成的工程文件的src/main.js
 import hljs from 'highlight.js'
@@ -22,6 +24,8 @@ Vue.directive('highlight',function (el) {
 Vue.use(ElementUI);
 
 Vue.config.productionTip = false
+
+Vue.component('SearchInput');
 
 /* eslint-disable no-new */
 new Vue({

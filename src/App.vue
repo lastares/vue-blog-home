@@ -2,25 +2,32 @@
   <div id="wrap">
     <TheHeader/>
     <div id="main-container" class="container main-container main-col">
-      <router-view/>
+      <router-view :key="key"></router-view>
     </div>
     <TheFooter/>
   </div>
 </template>
 
 <script>
-import TheHeader from '@/components/layouts/TheHeader';
-import TheFooter from '@/components/layouts/TheFooter';
-import Login from '@/views/auth/Login';
+  import TheHeader from '@/components/layouts/TheHeader';
+  import TheFooter from '@/components/layouts/TheFooter';
+  import Login from '@/views/auth/Login';
 
-export default {
-  name: 'App',
-  components: {
-    TheHeader,
-    TheFooter,
-    Login,
+
+  export default {
+    name: 'App',
+    components: {
+      TheHeader,
+      TheFooter,
+      Login,
+    },
+    computed: {
+      key() {
+        return this.$route.name !== undefined ? this.$route.name + new Date() : this.$route + new Date()
+      }
+
+    }
   }
-}
 </script>
 
 <!--<link rel="stylesheet" media='all' href="styles/bootstrap.min.css">-->
@@ -46,6 +53,7 @@ export default {
   .main-col {
     padding-left: 0px !important;
   }
+
   .topics-show {
     position: relative;
     background: #FFFFFF;
@@ -56,11 +64,13 @@ export default {
     border-radius: 0.28571429rem;
     border: 1px solid rgba(34, 36, 38, 0.15);
   }
+
   .navbar-default .navbar-brand img {
     width: auto !important;
     height: 40px !important;
     margin-top: -33px !important;
   }
+
   .navbar-default {
     border-top: 4px solid #f9438b !important;
     height: auto !important;
@@ -78,12 +88,21 @@ export default {
   .content-body img {
     width: 100% !important
   }
-  /*@media only screen and (max-device-width: 480px) and (min-device-width: 120px) {*/
-    /*.container {*/
-      /*padding: 0 7px;*/
-    /*}*/
-  /*}*/
 
+  p code {
+    padding: 2px 4px !important;
+    font-size: 90% !important;
+    color: #c7254e !important;
+    background-color: #f9f2f4 !important;
+    border-radius: 4px !important;
+    word-wrap: break-word !important;
+  }
+
+  /*@media only screen and (max-device-width: 480px) and (min-device-width: 120px) {*/
+  /*.container {*/
+  /*padding: 0 7px;*/
+  /*}*/
+  /*}*/
 
   /*body > .container { margin-top: 15px }*/
 </style>
