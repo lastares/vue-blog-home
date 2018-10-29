@@ -1,41 +1,43 @@
 <template>
-  <div class="wrap">
-    <!-- Main -->
-    <div class="container" v-loading="loading">
-      <div class="row main">
-        <div class="col-md-9 side-left topics-show" style="margin-bottom: 20px;">
-          <!-- view show -->
-          <div class="topic panel panel-default" style="border: 1px solid white !important;">
-            <div class="infos panel-heading">
-              <h1 class="panel-title topic-title">{{ article.title }}</h1>
-              <div class="meta inline-block">
-                <a class="author" href="/users/1">{{article.author}}</a>
-                <abbr class="timeago">1月前</abbr>
-                &nbsp;{{article.click}} 阅读
+  <!--<div class="row">-->
+    <div class="wrap">
+      <!-- Main -->
+      <div class="container" v-loading="loading">
+        <div class="row main">
+          <div class="col-md-9 side-left topics-show" style="margin-bottom: 20px;">
+            <!-- view show -->
+            <div class="topic panel panel-default" style="border: 1px solid white !important;">
+              <div class="infos panel-heading">
+                <h1 class="panel-title topic-title">{{ article.title }}</h1>
+                <div class="meta inline-block">
+                  <a class="author" href="/users/1">{{article.author}}</a>
+                  <abbr class="timeago">1月前</abbr>
+                  &nbsp;{{article.click}} 阅读
+                </div>
+                <div class="clearfix"></div>
               </div>
-              <div class="clearfix"></div>
-            </div>
-            <div class="content-body entry-content panel-body">
-              <div class="markdown-body" v-html="article.html" v-highlight>
+              <div class="content-body entry-content panel-body">
+                <div class="markdown-body" v-html="article.html" v-highlight>
+                </div>
               </div>
-            </div>
-            <div class="tag">
-              <el-tag class="el-tag" type="info" v-for="tag in article.tags">
-                <a href="#">{{tag.name}}</a>
-              </el-tag>
-            </div>
+              <div class="tag">
+                <el-tag class="el-tag" type="info" v-for="tag in article.tags">
+                  <a href="#">{{tag.name}}</a>
+                </el-tag>
+              </div>
               <!--<i class="icon tags"></i>-->
               <!--<a class="ui label" href="https://laravel-china.org/topics/tags/laravel/58">#{{tag.name}}</a>-->
+            </div>
           </div>
-        </div>
-        <div class="col-md-3">
-          <div class="row">
-            <TheSidebar/>
+          <div class="col-md-3">
+            <div class="row">
+              <TheSidebar/>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  <!--</div>-->
 </template>
 <script>
   import TheSidebar from '@/components/layouts/TheSidebar';
@@ -91,5 +93,9 @@
     word-break:break-all;
     width:auto;
   }
+
+  /*.panel {*/
+    /*padding: 10px !important;*/
+  /*}*/
 
 </style>

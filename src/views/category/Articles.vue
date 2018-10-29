@@ -30,6 +30,7 @@
   </div>
 </template>
 <script>
+  import sign from '@/utils/sign'
   export default {
     name: 'CategoryArticle',
     data() {
@@ -47,7 +48,12 @@
     methods: {
       getArticleByCateId: function() {
         let categoryId = this.$route.params.category_id;
-        this.$axios.get('http://www.newblog.com/api/category/articles?category_id=' + categoryId)
+        this.$axios.get('http://www.newblog.com/api/category/articles', {
+          params: {
+            category_id: categoryId,
+            sign: sign({category_id: categoryId,})
+          }
+        })
           .then(response => {
             this.articles = response.data;
           })

@@ -1,29 +1,31 @@
 <template>
-  <!--<div class="col-md-12">-->
+  <!--<div class="row">-->
     <footer class="footer">
       <div class="container">
         <div class="row footer-top">
-          <div class="col-sm-6 col-lg-6 col-lg-offset-1">
+          <div class="col-sm-6 col-lg-6 col-lg-push-2">
             <div class="row">
               <div class="col-sm-5">
-                <h4>{{ statistics.title }}</h4>
-
-                <ul class="list-unstyled">
-                  <li v-for="item in statistics.list">{{ item.title }}: {{ item.description }}</li>
-                </ul>
-              </div>
-
-              <div class="col-sm-5 col-lg-push-1">
                 <h4>{{ other.title }}</h4>
                 <ul class="list-unstyled">
                   <li v-for="(project, index) in other.list">{{ project.title }}: {{ project.description }}</li>
                 </ul>
               </div>
+              <!--<div class="col-sm-5 col-lg-push-4">-->
+              <!--<img src="../../assets/dig.gif" alt="">-->
+              <!--<h4>{{ statistics.title }}</h4>-->
+
+              <!--<ul class="list-unstyled">-->
+              <!--<li v-for="item in statistics.list">{{ item.title }}: {{ item.description }}</li>-->
+              <!--</ul>-->
+              <!--</div>-->
+
             </div>
           </div>
-          <div class="col-sm-4 col-lg-4" style="text-align: center;vertical-align: middle">
+          <div class="col-sm-4 col-lg-4 col-lg-push-1" style="text-align: center;vertical-align: middle">
+            <img src="../../assets/dig.gif" alt="">
             <p class="padding-top-xsm">{{ description }}</p>
-            <span v-html="designer"></span>
+            <!--<span v-html="designer"></span>-->
           </div>
         </div>
       </div>
@@ -117,6 +119,10 @@
     .footer {
       position: absolute;
       bottom: 0;
-      height: 160px !important;
+      height: 135px !important;
     }}
+
+  .main-col, .side-bar {
+     margin-bottom: 0px;
+  }
 </style>

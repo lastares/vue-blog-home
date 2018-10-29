@@ -38,12 +38,15 @@
         imgSrc: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=154816243,285037458&fm=26&gp=0.jpg',
         articles: {},
         loading: true,
+        value: '',
       }
     },
     created() {
       let value = this.$route.params.word;
+      this.value = value;
       this.getIndexArticle(value);
     },
+
     methods: {
       getIndexArticle(value) {
         this.$axios.get('http://www.newblog.com/api/articles', {params:{

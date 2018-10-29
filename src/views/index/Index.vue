@@ -31,6 +31,8 @@
   </div>
 </template>
 <script>
+  import config from '../../../config/index'
+  import sign from '@/utils/sign'
   export default {
     name: 'Index',
     data() {
@@ -42,13 +44,13 @@
     },
     created() {
       this.getIndexArticle();
-      // console.log(this.$router.currentRoute);
-      console.log(this.$route.params.word);
-      // this.isloading = false;
+      console.log(sign());
     },
     methods: {
       getIndexArticle: function () {
-        this.$axios.get('http://www.newblog.com/api/articles')
+        this.$axios.get('http://www.newblog.com/api/articles', {
+          // params: {sign: sign()}
+        })
           .then(response => {
             this.articles = response.data;
           })
