@@ -48,7 +48,7 @@
     methods: {
       getArticleByCateId: function() {
         let categoryId = this.$route.params.category_id;
-        this.$axios.get('https://api.songyaofeng.com/api/category/articles', {
+        this.$axios.get('http://api.songyaofeng.com/api/category/articles', {
           params: {
             category_id: categoryId,
             sign: sign({category_id: categoryId,})
