@@ -24,7 +24,7 @@
     },
     methods: {
       getRandomArticle() {
-        this.$axios.get('http://api.songyaofeng.com/api/article/random')
+        this.$axios.get('https://api.songyaofeng.com/api/article/random')
           .then(response => {
             this.articles = response.data;
           })

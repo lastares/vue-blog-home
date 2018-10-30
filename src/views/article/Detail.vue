@@ -55,7 +55,7 @@
     created() {
       console.log(this.$route.params.id);
       let articleId = this.$route.params.id;
-      this.$axios.get('http://api.songyaofeng.com/api/article/show?article_id=' + articleId)
+      this.$axios.get('https://api.songyaofeng.com/api/article/show?article_id=' + articleId)
         .then(response => {
           this.article = response.data;
           console.log(this.article.tag);
