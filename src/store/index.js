@@ -40,7 +40,7 @@ const getters = {
 
 const actions = {
   async getArticles({commit}, params) {
-    let url = 'http://api.songyaofeng.com/api/articles';
+    let url = 'https://www.songyaofeng.xyz/api/articles';
     let response = await axios(url);
     commit('getArticles', {
       articles: response.data
