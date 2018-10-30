@@ -48,7 +48,7 @@
     },
     methods: {
       getIndexArticle: function () {
-        this.$axios.get('http://www.newblog.com/api/articles', {
+        this.$axios.get('http://api.songyaofeng.com/api/articles', {
           // params: {sign: sign()}
         })
           .then(response => {

@@ -49,7 +49,7 @@
 
     methods: {
       getIndexArticle(value) {
-        this.$axios.get('http://www.newblog.com/api/articles', {params:{
+        this.$axios.get('http://api.songyaofeng.com/api/articles', {params:{
             word: value
           }})
           .then(response => {

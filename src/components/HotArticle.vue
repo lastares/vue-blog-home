@@ -26,7 +26,7 @@
     },
     methods: {
       getHotArticle: function () {
-        this.$axios.get('http://www.newblog.com/api/article/hot')
+        this.$axios.get('http://api.songyaofeng.com/api/article/hot')
           .then(response => {
             this.articles = response.data;
             console.log(this.articles);
