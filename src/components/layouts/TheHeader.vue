@@ -77,7 +77,7 @@
         this.$axios.get('https://www.songyaofeng.xyz/api/categories')
           .then(response => {
             this.navList = response.data;
-            console.log(this.navList);
+            // console.log(this.navList);
           });
       }
 
