@@ -43,6 +43,11 @@ const routes = [
     name: 'SearchArticle',
     component: SearchArticle
   },
+  {
+    path: '*',
+    name: 'ArticleList',
+    component: ArticleList,
+  },
 ];
 
 const router = new Router({
