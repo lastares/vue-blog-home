@@ -9,7 +9,7 @@
         <ul class="list-group row topic-list">
           <li class="list-group-item media col-md-6" v-for="article in articles" style="margin-top: 0px;">
             <a class="reply_last_time hidden-xs meta" href="/view/196">
-              <span class="stress">{{ article.click }}</span> 浏览<span> ⋅ </span>0 回复
+              <span class="stress">{{ article.click }}</span> 浏览<span> ⋅ </span>
             </a>
 
             <div class="avatar pull-left">
@@ -20,7 +20,7 @@
 
             <div class="infos">
               <div class="media-heading">
-                <span class="hidden-xs label label-default channel_featured channel_top">{{article.category_id}}</span>
+                <span class="hidden-xs label label-default channel_featured channel_top">{{article.category_name}}</span>
                 <router-link :to="'/article/' + article.id">{{ article.title }}</router-link>
               </div>
             </div>

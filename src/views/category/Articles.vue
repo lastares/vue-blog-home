@@ -19,7 +19,7 @@
 
             <div class="infos">
               <div class="media-heading">
-                <span class="hidden-xs label label-default channel_featured channel_top">{{article.category_id}}</span>
+                <span class="hidden-xs label label-default channel_featured channel_top">{{article.category_name}}</span>
                 <router-link :to="'/article/' + article.id">{{ article.title }}</router-link>
               </div>
             </div>
