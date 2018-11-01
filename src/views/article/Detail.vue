@@ -11,7 +11,7 @@
                 <h1 class="panel-title topic-title">{{ article.title }}</h1>
                 <div class="meta inline-block">
                   <a class="author" href="/users/1">{{article.author}}</a>
-                  <abbr class="timeago">1月前</abbr>
+                  <abbr class="timeago">{{article.created_at}}</abbr>
                   &nbsp;{{article.click}} 阅读
                 </div>
                 <div class="clearfix"></div>
