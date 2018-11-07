@@ -36,7 +36,7 @@
     name: 'SearchArticle',
     data() {
       return {
-        imgSrc: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=154816243,285037458&fm=26&gp=0.jpg',
+        imgSrc: 'https://ws1.sinaimg.cn/large/0072UfNMly1fwzkel46znj30b40b43yz.jpg',
         articles: {},
         loading: true,
         value: '',

@@ -11,7 +11,7 @@
             <a class="reply_last_time hidden-xs meta" href="/view/196">
 
               <!--<span class="stress">-->
-              <span class="stress"><el-tag size="mini" type="success">{{ article.insert_at }}</el-tag></span>
+              <span class="stress"><el-tag size="mini" type="warning">{{ article.insert_at }}</el-tag></span>
               <span><el-tag size="mini">{{ article.click }} 浏览</el-tag></span>
             </a>
 
@@ -40,7 +40,7 @@
     name: 'Index',
     data() {
       return {
-        imgSrc: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=154816243,285037458&fm=26&gp=0.jpg',
+        imgSrc: 'https://ws1.sinaimg.cn/large/0072UfNMly1fwzkel46znj30b40b43yz.jpg',
         articles: {},
         loading: true
       }
