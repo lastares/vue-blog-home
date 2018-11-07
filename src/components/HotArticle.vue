@@ -29,7 +29,7 @@
         this.$axios.get('https://www.songyaofeng.xyz/api/article/hot')
           .then(response => {
             this.articles = response.data;
-            console.log(this.articles);
+            // console.log(this.articles);
           })
       }
     }

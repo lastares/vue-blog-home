@@ -9,7 +9,10 @@
         <ul class="list-group row topic-list">
           <li class="list-group-item media col-md-6" v-for="article in articles" style="margin-top: 0px;">
             <a class="reply_last_time hidden-xs meta" href="/view/196">
-              <span class="stress">{{ article.click }}</span> 浏览<span> ⋅ </span>
+
+              <!--<span class="stress">-->
+              <span class="stress"><el-tag size="mini" type="success">{{ article.insert_at }}</el-tag></span>
+              <span><el-tag size="mini">{{ article.click }} 浏览</el-tag></span>
             </a>
 
             <div class="avatar pull-left">
@@ -44,10 +47,11 @@
     },
     created() {
       this.getIndexArticle();
-      console.log(sign());
+      // console.log(sign());
     },
     methods: {
       getIndexArticle: function () {
+        // this.$axios.get('http://api.songyaofeng.com/api/articles', {
         this.$axios.get('https://www.songyaofeng.xyz/api/articles', {
           // params: {sign: sign()}
         })
@@ -73,9 +77,9 @@
     height: 58px;
     line-height: 34px;
   }
-  .list-group {
-    padding: 0 17px;
-  }
+  /*.list-group {*/
+    /*padding: 0 17px;*/
+  /*}*/
 
   .content-body img {
     vertical-align: middle !important;
