@@ -8,8 +8,9 @@
       <div class="panel-body" v-loading="loading">
         <ul class="list-group row topic-list">
           <li class="list-group-item media col-md-6" v-for="article in articles" style="margin-top: 0px;">
-            <a class="reply_last_time hidden-xs meta" href="/view/196">
-              <span class="stress">{{ article.click }}</span> 浏览<span> ⋅ </span>0 回复
+            <a class="reply_last_time hidden-xs meta" href="#">
+              <span class="stress"><el-tag size="mini" type="success">{{ article.insert_at }}</el-tag></span>
+              <span><el-tag size="mini">{{ article.click }} 浏览</el-tag></span>
             </a>
 
             <div class="avatar pull-left">
@@ -49,7 +50,8 @@
 
     methods: {
       getIndexArticle(value) {
-        this.$axios.get('https://www.songyaofeng.xyz/api/articles', {params:{
+        this.$axios.get('http://api.songyaofeng.com/api/articles', {params:{
+        // this.$axios.get('https://www.songyaofeng.xyz/api/articles', {params:{
             word: value
           }})
           .then(response => {

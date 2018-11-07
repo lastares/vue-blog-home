@@ -8,7 +8,9 @@
         <ul class="list-group row topic-list">
           <li class="list-group-item media col-md-6" v-for="(article, index) in articles" style="margin-top: 0px;">
             <a class="reply_last_time hidden-xs meta" href="/view/196">
-              <span class="stress"><el-tag size="mini" type="success">{{ article.insert_at }}</el-tag></span>
+              <span class="stress">
+                <el-tag size="mini" type="success">{{ article.insert_at }}</el-tag>
+              </span>
               <span><el-tag size="mini">{{ article.click }} 浏览</el-tag></span>
               <!--<span class="stress">{{ article.insert_at }}</span> <span>{{ article.click }}</span> 浏览-->
             </a>
