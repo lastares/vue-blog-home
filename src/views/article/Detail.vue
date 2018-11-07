@@ -38,7 +38,7 @@
             </div>
           </div>
         </div>
-        <div id="SOHUCS" v-bind:sid="article.id" ></div>
+        <div id="SOHUCS" data-sid="article.id" ></div>
       </div>
 
     </div>
