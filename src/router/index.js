@@ -44,14 +44,13 @@ const routes = [
     component: SearchArticle
   },
   {
-    path: '*',
+    path: '',
     name: 'ArticleList',
     component: ArticleList,
   },
   {
-    path: '',
-    name: 'ArticleList',
-    component: ArticleList,
+    path: "*",
+    redirect: "/"
   }
 ];
 
