@@ -50,8 +50,8 @@
 
     methods: {
       getIndexArticle(value) {
-        this.$axios.get('http://api.songyaofeng.com/api/articles', {params:{
-        // this.$axios.get('https://www.songyaofeng.xyz/api/articles', {params:{
+        // this.$axios.get('http://api.songyaofeng.com/api/articles', {params:{
+        this.$axios.get('https://www.songyaofeng.xyz/api/articles', {params:{
             word: value
           }})
           .then(response => {
